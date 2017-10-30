@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+
+            $('#btn').click(function(){
+               var first= $('input[name="first_name"]').val();
+               var last= $('input[name="last_name"]').val();
+               var description= $('input[name="description"]').val();
+
+    $('.table').append("<div class='box'><h1>"+first+" "+last+ " </h1><p>Click for description!</p>"+"<p id='des' style='display: none'>"+description+"</p></div>");
+         })
+
+          $(document).on("click",".box",function(){
+              $(this).children().toggle();
+
+
+
+          });
+
+        });
+
+    </script>
+
+</head>
+<body>
+<div class="container">
+
+<h1> Contact Card</h1>
+<form>
+    First name:<input type="text" name="first_name" value="">
+    Last name:<input type="text" name="last_name" value="">
+    Description<input type="text" name="description" value="" placeholder="Enter description">
+    <button id="btn" type="button" value="Add User"> Add User</button>
+</form>
+
+<div class="table"></div>
+
+</div>
+
+<style>
+    body{
+        width: 970px;
+    }
+    .container{
+        display: inline-block;
+        width: 1000px;
+    }
+    form{
+        display: inline-block;
+        width: 400px;
+
+        height: 100px;
+    }
+
+    #btn{
+        width: 100px;
+        margin:20px;
+        display: block;
+    }
+    input{
+        display:block;
+        height: 50px;
+    }
+    .table{
+        width: 400px;
+        display: inline-block;
+        vertical-align: top;
+        margin:5px;
+
+    }
+    .box{
+        display:block;
+        border: 1px solid black;
+
+    }
+
+
+</style>
+
+</body>
+</html>
